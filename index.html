@@ -4,117 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>windows10fan648 | Software Repository</title>
+    <link rel="stylesheet" href="https://unpkg.com/xp.css">
     <style>
-        body { 
-            font-family: 'Tahoma', sans-serif; 
-            background-color: #ece9d8; /* Classic XP Dialog Background */
-            color: #000; 
-            padding: 20px; 
+        /* Minimal custom styling just to center the window on the screen */
+        body {
+            background-color: #ece9d8; /* Standard XP desktop/dialog background */
+            padding: 20px;
             margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
         }
-        .window { 
-            max-width: 600px; 
-            margin: 40px auto; 
-            border: 3px solid #0055ea; 
-            border-radius: 5px 5px 0 0;
-            background: #fff; 
-            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
+        .main-window {
+            width: 100%;
+            max-width: 550px;
         }
-        .window-title {
-            background: linear-gradient(to right, #0052ea, #3ba3ff);
-            color: #fff;
-            padding: 8px 12px;
-            font-weight: bold;
-            font-size: 14px;
-            letter-spacing: 0.5px;
-        }
-        .content {
-            padding: 25px;
-        }
-        .intro {
-            font-size: 0.95em;
-            color: #444;
-            margin-top: 0;
+        fieldset {
             margin-bottom: 20px;
-            border-bottom: 1px dotted #aca899;
-            padding-bottom: 15px;
         }
-        h3 { 
-            color: #0055ea; 
-            margin-top: 25px;
-            margin-bottom: 4px;
-            font-size: 1.1em;
+        .actions-group {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
         }
         .description {
-            font-size: 0.85em;
-            color: #555;
-            margin-top: 0;
-            margin-bottom: 12px;
-            line-height: 1.4;
+            margin: 0 0 10px 0;
+            color: #222;
         }
-        .btn-group {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .download-btn { 
-            flex: 1;
-            min-width: 140px;
-            display: inline-block; 
-            padding: 10px; 
-            background: #f0f0f0; 
-            border: 1px solid #aca899; 
-            border-radius: 3px;
-            text-decoration: none; 
-            color: #000; 
-            text-align: center;
-            font-size: 0.85em;
-            font-weight: bold;
-            transition: all 0.1s ease;
-        }
-        .download-btn:hover { 
-            background: #e5e5e5; 
-            border-color: #0055ea;
-            color: #0055ea;
-        }
-        .download-btn.secondary {
-            background: #fafafa;
-            color: #666;
-            font-weight: normal;
-        }
-        .download-btn.secondary:hover {
-            background: #f0f0f0;
-            border-color: #777;
-            color: #000;
+        button {
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <div class="window">
-        <div class="window-title">windows10fan648 - Software Repository</div>
-        
-        <div class="content">
-            <p class="intro">Welcome to my software collection. All files are hosted securely via GitHub.</p>
-            
-            <h3>Windows XP Tools</h3>
-            <p class="description">Essential tools and scripts designed for system maintenance and evaluation in Windows XP environments.</p>
-            <div class="btn-group">
-                <a class="download-btn" href="https://github.com/windows10fan648/software-repository/raw/refs/heads/main/WindowsXPActivator.7z">Download: WindowsXPActivator.7z</a>
+    <div class="window main-window">
+        <div class="title-bar">
+            <div class="title-bar-text">windows10fan648 - Software Repository</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
             </div>
+        </div>
+
+        <div class="window-body">
+            <p style="margin-top: 5px;">Welcome to my software collection. All files are securely built and hosted on GitHub.</p>
             
-            <h3>Languages & Utilities</h3>
-            <p class="description">The E++ custom programming compiler environment and runtime tools.</p>
-            <div class="btn-group">
-                <a class="download-btn" href="https://github.com/windows10fan648/software-repository/raw/refs/heads/main/E++.7z">Download: E++ (Compiler)</a>
-            </div>
+            <fieldset>
+                <legend>Windows XP Tools</legend>
+                <p class="description">Essential tools and scripts designed for system maintenance and evaluation in legacy environments.</p>
+                <button onclick="window.location.href='https://github.com/windows10fan648/software-repository/raw/refs/heads/main/WindowsXPActivator.7z'">
+                    Download WindowsXPActivator.7z
+                </button>
+            </fieldset>
+
+            <fieldset>
+                <legend>Languages & Utilities</legend>
+                <p class="description">The custom E++ programming language compiler environment and matching runtime utilities.</p>
+                <button onclick="window.location.href='https://github.com/windows10fan648/software-repository/raw/refs/heads/main/E++.7z'">
+                    Download E++ (Compiler)
+                </button>
+            </fieldset>
+
+            <fieldset>
+                <legend>Development</legend>
+                <p class="description">A blazing fast TrueType Font (.ttf) to binary converter built in Rust, featuring automated multi-platform compilation.</p>
+                <div class="actions-group">
+                    <button style="flex: 1;" onclick="window.location.href='https://github.com/windows10fan648/ttf2bin'">
+                        Get Compiled Binaries (Win / Linux)
+                    </button>
+                    <button style="flex: 1;" onclick="window.location.href='https://github.com/windows10fan648/ttf2bin/archive/refs/heads/main.zip'">
+                        Source Code (.zip)
+                    </button>
+                </div>
+            </fieldset>
             
-            <h3>Development</h3>
-            <p class="description">A blazing fast TrueType Font (.ttf) to binary converter built in Rust, featuring automated multi-platform builds.</p>
-            <div class="btn-group">
-                <a class="download-btn" href="https://github.com/windows10fan648/ttf2bin">Get Compiled Binaries (Win / Linux)</a>
-                <a class="download-btn secondary" href="https://github.com/windows10fan648/ttf2bin/archive/refs/heads/main.zip">Source Code (.zip)</a>
+            <div class="status-bar">
+                <p class="status-bar-field">Status: Online</p>
+                <p class="status-bar-field">Host: GitHub / Render</p>
+                <p class="status-bar-field" style="text-align: right;">v1.0.2</p>
             </div>
         </div>
     </div>
